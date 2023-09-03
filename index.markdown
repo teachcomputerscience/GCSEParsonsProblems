@@ -245,12 +245,12 @@ If want each problem to be it's own page, you can use relative path links at the
 
 # This is a test
 
-<div id="sortableTrash" class="sortable-code"></div> 
-<div id="sortable" class="sortable-code"></div> 
+<div id="test-sortableTrash" class="sortable-code"></div> 
+<div id="test-sortable" class="sortable-code"></div> 
 <div style="clear:both;"></div> 
 <p> 
-    <input id="feedbackLink" value="Get Feedback" type="button" /> 
-    <input id="newInstanceLink" value="Reset Problem" type="button" /> 
+    <input id="test-feedbackLink" value="Get Feedback" type="button" /> 
+    <input id="test-newInstanceLink" value="Reset Problem" type="button" /> 
 </p> 
 <script type="text/javascript"> 
 (function(){
@@ -259,7 +259,7 @@ If want each problem to be it's own page, you can use relative path links at the
     "name = Console.Readline()\n" +
     "Console.Writeline(&quot;Hello &quot; &amp; name)";
   var parsonsPuzzle = new ParsonsWidget({
-    "sortableId": "sortable",
+    "sortableId": "test-sortable",
     "max_wrong_lines": 10,
     "grader": ParsonsWidget._graders.LineBasedGrader,
     "exec_limit": 2500,
@@ -267,15 +267,15 @@ If want each problem to be it's own page, you can use relative path links at the
     "x_indent": 50,
     "lang": "en",
     "show_feedback": true,
-    "trashId": "sortableTrash"
+    "trashId": "test-sortableTrash"
   });
   parsonsPuzzle.init(initial);
   parsonsPuzzle.shuffleLines();
-  $("#newInstanceLink").click(function(event){ 
+  $("#test-newInstanceLink").click(function(event){ 
       event.preventDefault(); 
       parsonsPuzzle.shuffleLines(); 
   }); 
-  $("#feedbackLink").click(function(event){ 
+  $("#test-feedbackLink").click(function(event){ 
       event.preventDefault(); 
       parsonsPuzzle.getFeedback(); 
   }); 
